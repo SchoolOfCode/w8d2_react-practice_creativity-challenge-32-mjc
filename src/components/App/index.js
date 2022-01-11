@@ -49,13 +49,22 @@ function App() {
 
   return (
     <div className="App">
-      <div>
-        {art ? <DisplayArt art={art} addFav={handleAddToFavList}></DisplayArt> : <></>}
-        <Input handleSearchSubmit={handleSearchSubmit} />
-      </div>
+      <h1>Gallery</h1>
+      <h4>search for art from the Art Institute of Chicago!!!</h4>
 
-      <div>
-        <FavList favList={favList} />
+      <div className="container">
+        <div style={{ width: "40%" }}>
+          {art ? (
+            <DisplayArt art={art} addFav={handleAddToFavList}></DisplayArt>
+          ) : (
+            <></>
+          )}
+          <Input handleSearchSubmit={handleSearchSubmit} />
+        </div>
+
+        <div style={{ width: "40%" }}>
+          <FavList favList={favList} />
+        </div>
       </div>
     </div>
   );
