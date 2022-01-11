@@ -1,11 +1,20 @@
 import "./App.css";
 
+import {useState} from "react"
+
+import Input from "../Input";
+
 function App() {
+
+  const [search, setSearch] = useState("");
+
+  function handleSearchSubmit(text) {
+    setSearch(text);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Gallery</h1>
-      </header>
+      <Input handleSearchSubmit={handleSearchSubmit}/>    
     </div>
   );
 }

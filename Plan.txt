@@ -23,8 +23,8 @@ state - search, item, favList,
     useEffect on search, fetch data
 Input
 state - text
-    a prop function from App that will update search
-    a function that will update text when button onClick
+    a function that will update text when input onChange
+    a prop function from App that will update search when button onClick
 DisplayItem
     display props item
     a prop function button onClick to update favList with item
