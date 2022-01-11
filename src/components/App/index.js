@@ -3,6 +3,7 @@ import "./App.css";
 import { useState, useEffect } from "react";
 
 import Input from "../Input";
+import DisplayArt from "../DisplayArt";
 
 function App() {
   const [art, setArt] = useState();
@@ -28,8 +29,8 @@ function App() {
 
       setArt({
         title: artData.data.title,
-        artist_display: artData.data.artist_display,
-        date_display: artData.data.date_display,
+        artistDisplay: artData.data.artist_display,
+        dateDisplay: artData.data.date_display,
         image: `https://www.artic.edu/iiif/2/${artData.data.image_id}/full/843,/0/default.jpg`,
       });
     }
@@ -43,7 +44,7 @@ function App() {
   return (
     <div className="App">
       <Input handleSearchSubmit={handleSearchSubmit} />
-      {art ? <code>{JSON.stringify(art)}</code> : <></>}
+      {art ? <DisplayArt art={art}></DisplayArt> : <></>}
     </div>
   );
 }
