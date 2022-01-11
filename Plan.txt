@@ -1,0 +1,33 @@
+To. Do List
+Search and Browse recipe API and add the recipes you like to a list. 
+Art Institute of Chicago API
+https://api.artic.edu/api/v1/artworks/search?q=cats&limit=1
+grab data[0].api_link
+go and fetch from that link
+    title
+    artist_display
+    date_display
+image
+    https://www.artic.edu/iiif/2/{image_id}/full/843,/0/default.jpg
+
+Add to fav list
+Display fav list
+    All info, mvp stringfy museum object
+
+Additional. Features
+Sort By Priority
+
+Component. Structure
+App
+state - search, item, favList, 
+    useEffect on search, fetch data
+Input
+state - text
+    a prop function from App that will update search
+    a function that will update text when button onClick
+DisplayItem
+    display props item
+    a prop function button onClick to update favList with item
+FavList
+    loop through favList props, display list
+
