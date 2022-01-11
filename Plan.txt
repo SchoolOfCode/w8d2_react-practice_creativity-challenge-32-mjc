@@ -26,7 +26,7 @@ state - text
     a function that will update text when input onChange
     a prop function from App that will update search when button onClick
 DisplayItem
-    display props item
+    fetch, and display props item
     a prop function button onClick to update favList with item
 FavList
     loop through favList props, display list
