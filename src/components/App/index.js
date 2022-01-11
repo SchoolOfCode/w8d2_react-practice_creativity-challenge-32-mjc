@@ -4,10 +4,12 @@ import { useState, useEffect } from "react";
 
 import Input from "../Input";
 import DisplayArt from "../DisplayArt";
+import FavList from "../FavList";
 
 function App() {
   const [art, setArt] = useState();
   const [search, setSearch] = useState("");
+  const [favList, setFavList] = useState([]);
 
   useEffect(() => {
     async function fetchArt() {
@@ -41,10 +43,20 @@ function App() {
     setSearch(text);
   }
 
+  function handleAddToFavList(artObj) {
+    setFavList([...favList, artObj]);
+  }
+
   return (
     <div className="App">
-      <Input handleSearchSubmit={handleSearchSubmit} />
-      {art ? <DisplayArt art={art}></DisplayArt> : <></>}
+      <div>
+        {art ? <DisplayArt art={art} addFav={handleAddToFavList}></DisplayArt> : <></>}
+        <Input handleSearchSubmit={handleSearchSubmit} />
+      </div>
+
+      <div>
+        <FavList favList={favList} />
+      </div>
     </div>
   );
 }
